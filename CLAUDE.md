@@ -63,9 +63,36 @@ rg "pattern" docs/            # Search across sources
 
 **4444jPP Governance**: The identity token decomposes as BLOCK (`4444`) + HINGE (`j`) + POSTS (`PP`). Spoken: "Quad Four J Double P". Used as design governance constraint throughout.
 
-**φ-Operators**: `φ+` (expand), `φ−` (contract), `φ≈` (align), `φ//` (recalibrate), `φ🌀` (recursive), `φ⊕` (blend).
+**φ-Operators**: `φ+` (expand), `φ−` (contract), `φ≈` (align), `φ//` (recalibrate), `φ🌀` (recursive), `φ⊕` (blend), `φ¬` (invert), `φ→` (project).
 
 **The Perpetual Ledger**: Smart contracts hold `UniversalState` (seed, activeCipher, chaosLevel, globalHarmonics). A `pulse()` function advances state deterministically. Users `manifest()` historical blocks into NFTs—they don't create, they capture the ongoing stream.
+
+## Universal Patterns (Cross-Phase)
+
+Two foundational patterns apply universally across all five phases:
+
+### Polycosm Reality Engine
+
+The multiversal framework for perceiving how the same Universal Source manifests differently across parallel reality branches. Reality prisms (Oracle, Poet, Alchemical, Celestial, Fractal, etc.) interpret any source—names, ciphers, block states—through different lenses. **Convergence across prisms approaches truth.**
+
+- Spec: `extensions/universal/polycosm-reality-engine.md`
+- Interface: `IPolycosmoEngine<T>` with generic source types
+
+### Symbolic Reduction Grammar
+
+The compression/expansion gradient from identity to minimality:
+
+```
+IDENTITY → ABBREV → NUMERIC → SYMBOLIC → LIMINAL → REFLECTIVE → MINIMAL → OPERATOR
+   ↓          ↓        ↓         ↓          ↓          ↓           ↓          ↓
+natural    acronym  number    glyph      query     mirror      essence     verb
+language            anchor   direction  uncertain  inversion    form        form
+```
+
+Example: `Anthony James Padavano → AJP → 4JP → 4J|> → 4_/|? → <|_/|?> → <,/> → φ⊕`
+
+- Spec: `extensions/universal/symbolic-reduction-grammar.md`
+- Interface: `SymbolicReductionGrammar` with bidirectional traversal
 
 ## Key Files
 
@@ -74,6 +101,9 @@ rg "pattern" docs/            # Search across sources
 - `specs/phase-5-ledger/spec.md` — Perpetual Ledger system specification
 - `extensions/phase-4-synthesis/integrated-creative-platform-spec.md` — Platform integration spec
 - `extensions/phase-2-cipher/cipher-rendering-unified-architecture.md` — Cipher state machine architecture
+- `extensions/phase-2-cipher/cipher-alchemy-extension.md` — Astrological ciphers, historical compendium, cryptanalysis
+- `extensions/universal/polycosm-reality-engine.md` — Multiversal rendering framework
+- `extensions/universal/symbolic-reduction-grammar.md` — Naming/abstraction grammar
 
 ## Technology Stack
 

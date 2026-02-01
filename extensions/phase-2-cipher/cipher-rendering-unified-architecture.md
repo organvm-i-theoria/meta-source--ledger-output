@@ -92,6 +92,7 @@ interface ICipher {
 }
 
 enum CipherFamily {
+  // Core cipher families
   SUBSTITUTION_SIMPLE,      // Caesar, ROT13, Atbash
   SUBSTITUTION_POLY,        // Vigenère, Beaufort
   TRANSPOSITION,            // Rail Fence, Columnar
@@ -99,7 +100,20 @@ enum CipherFamily {
   STREAM,                   // RC4, ChaCha20
   BLOCK,                    // AES, DES
   ASYMMETRIC,               // RSA, ECC
-  HASH                      // SHA, MD5 (one-way)
+  HASH,                     // SHA, MD5 (one-way)
+
+  // Astrological family (Cipher Alchemy Extension)
+  ASTROLOGICAL,             // Zodiac12, Planetary, Decan, Degree
+
+  // Historical period families (Cipher Alchemy Extension)
+  HISTORICAL_ANCIENT,       // Pre-500 CE: Scytale, Atbash, Polybius
+  HISTORICAL_CLASSICAL,     // 500-1400 CE: Al-Kindi frequency analysis
+  HISTORICAL_RENAISSANCE,   // 1400-1700: Alberti, Trithemius, Bacon
+  HISTORICAL_ENLIGHTENMENT, // 1700-1900: Jefferson, Playfair
+  HISTORICAL_WWI_WWII,      // 1914-1945: ADFGVX, Purple, Navajo
+
+  // Unsolved cipher category (Cipher Alchemy Extension)
+  UNSOLVED,                 // Voynich, Zodiac, Kryptos K4, Beale
 }
 
 enum ComplexityLevel {

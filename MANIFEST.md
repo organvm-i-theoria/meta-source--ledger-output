@@ -3,11 +3,11 @@
 ## Annotated Bibliography & Thread Registry
 
 **Document Type:** Project Manifest
-**Version:** 1.2 (Fully Annotated)
-**Generated:** 2026-01-31
+**Version:** 1.4 (Fully Annotated)
+**Generated:** 2026-02-01
 **Author System:** 4444jPP
-**Total Content Files:** 45
-**Total Lines:** ~38,000+
+**Total Content Files:** 48
+**Total Lines:** ~42,000+
 **Annotation Coverage:** 100%
 
 ---
@@ -892,6 +892,73 @@ Detailed technical protocol for the autonomous ledger system. Specifies the `pul
 
 ---
 
+## Universal Extensions (Cross-Phase)
+
+### UNI-001: Polycosm Reality Engine
+
+**Unique ID:** `UNI-001`
+**Filename:** `extensions/universal/polycosm-reality-engine.md`
+**Thread:** `THR-006`
+**Lines:** 1,135
+**Extends:** All phases
+
+**Tags:** `#universal` `#polycosm` `#multiversal` `#prism` `#convergence` `#reality-engine`
+
+**Annotation:**
+Universal framework for rendering multiversal reality across all project phases. Core innovation: the same Universal Source (name, cipher, block state, algorithm) produces different outputs depending on which Reality Prism observes it. Defines `IPolycosmoEngine<T>` generic interface for managing multiple reality branches, `RealityPrism<T>` abstract class for domain-specific interpretation, and convergence detection algorithm that identifies when multiple prisms agree—approaching Universal Truth. Includes standard prism library (Oracle, Poet, Alchemical, Celestial, Contrarian, Fractal, Historical) with phase-specific application examples for Identity, Cipher, Mythology, Synthesis, and Ledger domains. Integrates with Phase 5 Perpetual Ledger as the on-chain Universal Source.
+
+**Key Concepts Introduced:**
+- Multiversal rendering through prisms
+- Convergence as truth detection
+- Generic source interpretation framework
+- Phase-agnostic architecture
+
+---
+
+### UNI-002: Symbolic Reduction Grammar
+
+**Unique ID:** `UNI-002`
+**Filename:** `extensions/universal/symbolic-reduction-grammar.md`
+**Thread:** `THR-006`
+**Lines:** 947
+**Extends:** All phases, `EXT-301` (4444jPP)
+
+**Tags:** `#universal` `#grammar` `#symbolic` `#reduction` `#phi-operators` `#abstraction`
+
+**Annotation:**
+Formalized system for encoding any concept at different levels of abstraction through compression/expansion gradients. Defines 8-stage reduction chain: IDENTITY → ABBREVIATION → NUMERIC → SYMBOLIC → LIMINAL → REFLECTIVE → MINIMAL → OPERATOR. Each stage preserves essential meaning while shedding surface form. Bidirectional traversal via `reduce()` and `expand()` functions. Extends φ-operator system with complete vocabulary: φ+ (expand), φ− (contract), φ≈ (align), φ// (recalibrate), φ🌀 (recursive), φ⊕ (blend), φ¬ (invert), φ→ (project), φ← (receive), φ∥ (hold), φ⊙ (release), φ⟳ (transmute), φ◇ (crystallize). Includes `SymbolicReductionGrammar` interface with reference implementation and cross-phase application examples. Canonical example: Anthony James Padavano → AJP → 4JP → 4J|> → 4_/|? → <|_/|?> → <,/> → φ⊕.
+
+**Key Concepts Introduced:**
+- 8-stage reduction/expansion gradient
+- Bidirectional abstraction traversal
+- Extended φ-operator vocabulary
+- Universal naming/encoding grammar
+
+---
+
+## Cipher Alchemy Extension (Phase 2)
+
+### EXT-205: Cipher Alchemy Extension
+
+**Unique ID:** `EXT-205`
+**Filename:** `extensions/phase-2-cipher/cipher-alchemy-extension.md`
+**Thread:** `THR-006`
+**Lines:** 1,912
+**Extends:** `EXT-201`, `UNI-001`
+
+**Tags:** `#astrological` `#zodiac` `#historical` `#cryptanalysis` `#unsolved` `#polycosm-integration`
+
+**Annotation:**
+Comprehensive extension to cipher rendering system with three major components. **Astrological Cipher Family:** Zodiac12 (26 letters → 12 signs), Planetary (Agrippa's 7-planet correspondence tables), Decan (36 ten-degree divisions), Degree (full 360° encoding), and Elemental (4-element groupings)—all with `IAstrologicalCipher` interface and ZodiacWheelRenderer. **Historical Code Compendium:** Complete taxonomy from Ancient (Scytale, Atbash, Polybius) through Classical, Renaissance (Alberti, Trithemius), Enlightenment (Jefferson, Playfair), WWI/WWII (ADFGVX, Lorenz, Purple)—each with `IHistoricalCipher` interface including historical context, known vulnerabilities, and evolution chain. **Unsolved Cipher Framework:** Full `IUnsolvedCipher` implementations for Voynich Manuscript (~170K chars, MS 408), Zodiac Killer (Z408✓, Z340✓, Z13, Z32), Kryptos (K1-3✓, K4), Beale Ciphers, and 8+ more with known facts databases, community theories, and experimental decryption hooks. **Cryptanalysis Engines:** FrequencyAnalysisEngine, IndexOfCoincidenceEngine, KasiskiExaminationEngine, KnownPlaintextEngine (Bombe-style menu construction), and MLPatternDetector—all with Polycosm prism integration for multi-lens analysis and convergence detection.
+
+**Key Concepts Introduced:**
+- Celestial encoding systems
+- Historical cipher taxonomy with metadata
+- Unsolved cipher research framework
+- Pattern recognition engine architecture
+
+---
+
 # Auxiliary File Registry
 
 ## Non-Markdown Assets
@@ -1125,6 +1192,14 @@ EXT-401 ◀── ALL PRIOR DOCUMENTS (platform integration)
 
 EXT-501 ─▶ EXT-502 (protocol details)
 
+UNI-001 ─▶ ALL PHASES (polycosm reality engine)
+
+UNI-002 ─▶ ALL PHASES, EXT-301 (symbolic reduction grammar)
+
+EXT-205 ─┬─▶ EXT-201 (cipher architecture)
+         ├─▶ UNI-001 (polycosm integration)
+         └─▶ UNI-002 (φ-operator system)
+
 REP-001 ─▶ ALL DOCUMENTS (contributor guidance)
 ```
 
@@ -1138,9 +1213,10 @@ REP-001 ─▶ ALL DOCUMENTS (contributor guidance)
 | 1.1 | 2026-01-31 | Full detailed annotations for all 44 files; expanded SRC-011–014 with comprehensive analysis; added 8 detailed auxiliary file annotations |
 | 1.2 | 2026-01-31 | Added AGENTS.md repository guidelines entry (REP-001); updated totals and manifest structure note |
 | 1.3 | 2026-01-31 | Added Phase 5: The Perpetual Ledger (EXT-501, EXT-502) defining autonomous blockchain architecture |
+| 1.4 | 2026-02-01 | Added Universal Extensions (UNI-001: Polycosm Reality Engine, UNI-002: Symbolic Reduction Grammar) and Cipher Alchemy Extension (EXT-205); updated cross-reference matrix |
 
 ---
 
 *This manifest is part of the Meta-Source Ledger project. Generated by Claude Code from thread analysis and file inspection.*
 
-**Manifest Signature:** `4444jPP::MNFST::v1.3::2026-01-31`
+**Manifest Signature:** `4444jPP::MNFST::v1.4::2026-02-01`

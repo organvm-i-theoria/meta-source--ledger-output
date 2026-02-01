@@ -251,9 +251,232 @@ After MVP:
 
 ---
 
+# Cipher Alchemy Extension Tasks
+
+**Source**: `extensions/phase-2-cipher/cipher-alchemy-extension.md`
+**Priority**: P3 (After core MVP complete)
+
+---
+
+## Phase 10: User Story 7 - Astrological Ciphers (Priority: P3)
+
+**Goal**: User can encode messages using zodiac-based cipher systems
+
+**Independent Test**: Encode "HELLO" with Zodiac12, see ♌♌♎♓♓ output with animated wheel
+
+### Implementation for User Story 7
+
+- [ ] T094 [P] [US7] Define IAstrologicalCipher interface extending ICipher in `src/ciphers/astrological/AstrologicalInterface.ts`
+- [ ] T095 [P] [US7] Define CelestialSystem, CelestialPosition, ZodiacSign enums in `src/ciphers/astrological/types.ts`
+- [ ] T096 [US7] Create Zodiac12Cipher class in `src/ciphers/astrological/Zodiac12Cipher.ts`
+- [ ] T097 [US7] Implement letter-to-sign mapping (26→12 with 2-3 letters per sign)
+- [ ] T098 [US7] Implement getCelestialVisualHints() with wheel configuration
+- [ ] T099 [US7] Create ZodiacWheelRenderer in `src/metaphors/ZodiacWheelRenderer.ts`
+- [ ] T100 [US7] Draw 12-segment zodiac wheel with glyphs (♈♉♊♋♌♍♎♏♐♑♒♓)
+- [ ] T101 [US7] Implement sign highlighting during encryption
+- [ ] T102 [US7] Animate wheel rotation during letter encoding
+- [ ] T103 [P] [US7] Create PlanetaryCipher class in `src/ciphers/astrological/PlanetaryCipher.ts`
+- [ ] T104 [US7] Implement Agrippa planetary tables (7 planets, letter groups)
+- [ ] T105 [US7] Create OrbitalRenderer in `src/metaphors/OrbitalRenderer.ts`
+- [ ] T106 [US7] Draw planetary orbits with letter positions
+- [ ] T107 [US7] Animate orbital motion during encryption
+- [ ] T108 [P] [US7] Create DecanCipher class in `src/ciphers/astrological/DecanCipher.ts`
+- [ ] T109 [P] [US7] Create DegreeCipher class in `src/ciphers/astrological/DegreeCipher.ts`
+- [ ] T110 [US7] Register all astrological ciphers and renderers
+
+**Checkpoint**: Astrological cipher family works with zodiac wheel visualization
+
+---
+
+## Phase 11: User Story 8 - Historical Cipher Compendium (Priority: P3)
+
+**Goal**: User can explore and use ciphers from different historical eras
+
+**Independent Test**: Select "Ancient" era, use Scytale cipher, see cylinder visualization
+
+### Implementation for User Story 8
+
+- [ ] T111 [P] [US8] Define IHistoricalCipher interface in `src/ciphers/historical/HistoricalInterface.ts`
+- [ ] T112 [P] [US8] Define HistoricalContext, Vulnerability, EvolutionLink types in `src/ciphers/historical/types.ts`
+- [ ] T113 [US8] Add HistoricalEra enum (ANCIENT, CLASSICAL, RENAISSANCE, ENLIGHTENMENT, WWI_WWII)
+
+### Ancient Era (Pre-500 CE)
+- [ ] T114 [P] [US8] Create ScytaleCipher class in `src/ciphers/historical/ancient/ScytaleCipher.ts`
+- [ ] T115 [US8] Implement transposition by rod diameter (simulate leather strip)
+- [ ] T116 [US8] Create CylinderRenderer in `src/metaphors/CylinderRenderer.ts`
+- [ ] T117 [P] [US8] Create AtbashCipher class in `src/ciphers/historical/ancient/AtbashCipher.ts`
+- [ ] T118 [US8] Implement mirror alphabet (A↔Z, B↔Y, etc.)
+- [ ] T119 [P] [US8] Create PolybiusCipher class in `src/ciphers/historical/ancient/PolybiusCipher.ts`
+- [ ] T120 [US8] Implement 5×5 grid encoding
+
+### Renaissance Era (1400-1700)
+- [ ] T121 [P] [US8] Create AlbertiDiskCipher class in `src/ciphers/historical/renaissance/AlbertiDiskCipher.ts`
+- [ ] T122 [US8] Implement dual-disc polyalphabetic precursor
+- [ ] T123 [US8] Create DualDiscRenderer in `src/metaphors/DualDiscRenderer.ts`
+- [ ] T124 [P] [US8] Create TrithemiusTableauCipher in `src/ciphers/historical/renaissance/TrithemiusTableauCipher.ts`
+- [ ] T125 [US8] Implement progressive shift (A→A, B→C, C→E, etc.)
+- [ ] T126 [P] [US8] Create BaconBilateralCipher in `src/ciphers/historical/renaissance/BaconBilateralCipher.ts`
+- [ ] T127 [US8] Implement steganographic a/b encoding
+
+### WWI/WWII Era (1914-1945)
+- [ ] T128 [P] [US8] Create ADFGVXCipher class in `src/ciphers/historical/wwii/ADFGVXCipher.ts`
+- [ ] T129 [US8] Implement fractionation + columnar transposition
+- [ ] T130 [US8] Create FractionationGridRenderer in `src/metaphors/FractionationGridRenderer.ts`
+- [ ] T131 [P] [US8] Create LorenzCipher class in `src/ciphers/historical/wwii/LorenzCipher.ts`
+- [ ] T132 [US8] Implement teleprinter wheel simulation (SZ40/42)
+
+### UI Components
+- [ ] T133 [US8] Create HistoricalEraSelector component in `src/components/HistoricalEraSelector.tsx`
+- [ ] T134 [US8] Create CipherContextPanel showing historical info, vulnerabilities
+- [ ] T135 [US8] Create EvolutionChainViewer showing cipher lineage
+- [ ] T136 [US8] Register all historical ciphers with metadata
+
+**Checkpoint**: Historical compendium browsable with era navigation
+
+---
+
+## Phase 12: User Story 9 - Cryptanalysis Tools (Priority: P3)
+
+**Goal**: User can run analysis algorithms on ciphertext to detect cipher type
+
+**Independent Test**: Paste unknown ciphertext, get "likely polyalphabetic, key length ~5" result
+
+### Implementation for User Story 9
+
+- [ ] T137 [P] [US9] Define ICryptanalysisEngine interface in `src/analysis/CryptanalysisInterface.ts`
+- [ ] T138 [P] [US9] Define AnalysisResult, Finding, Recommendation types in `src/analysis/types.ts`
+
+### Frequency Analysis Engine
+- [ ] T139 [US9] Create FrequencyAnalysisEngine in `src/analysis/FrequencyAnalysisEngine.ts`
+- [ ] T140 [US9] Implement calculateFrequencies() for single characters
+- [ ] T141 [US9] Implement calculateBigramFrequencies()
+- [ ] T142 [US9] Implement calculateIC() for Index of Coincidence
+- [ ] T143 [US9] Implement inferCipherType() from IC value
+- [ ] T144 [US9] Create FrequencyHistogram component in `src/components/analysis/FrequencyHistogram.tsx`
+- [ ] T145 [US9] Create DistributionComparison component (observed vs expected English)
+
+### Kasiski Examination Engine
+- [ ] T146 [US9] Create KasiskiExaminationEngine in `src/analysis/KasiskiExaminationEngine.ts`
+- [ ] T147 [US9] Implement findRepeatedSequences() for patterns 3-10 chars
+- [ ] T148 [US9] Implement calculateDistances() between occurrences
+- [ ] T149 [US9] Implement findGCDCandidates() for key length estimation
+- [ ] T150 [US9] Create SequenceMapVisualization showing repeated patterns
+
+### Index of Coincidence Engine
+- [ ] T151 [US9] Create IndexOfCoincidenceEngine in `src/analysis/IndexOfCoincidenceEngine.ts`
+- [ ] T152 [US9] Implement estimateKeyLength() via coset IC averaging
+- [ ] T153 [US9] Implement findPeaks() for key length candidates
+- [ ] T154 [US9] Create KeyLengthGraph component showing IC by length
+
+### Analysis Dashboard
+- [ ] T155 [US9] Create AnalysisDashboard component in `src/components/analysis/AnalysisDashboard.tsx`
+- [ ] T156 [US9] Create CiphertextInput component for analysis paste
+- [ ] T157 [US9] Implement runAllEngines() combining results
+- [ ] T158 [US9] Display recommendations and next steps
+
+**Checkpoint**: Cryptanalysis dashboard working with visualization
+
+---
+
+## Phase 13: User Story 10 - Unsolved Cipher Toolkit (Priority: P4)
+
+**Goal**: User can explore unsolved ciphers and apply experimental attacks
+
+**Independent Test**: Select Voynich, view known facts, apply experimental cipher
+
+### Implementation for User Story 10
+
+- [ ] T159 [P] [US10] Define IUnsolvedCipher interface in `src/ciphers/unsolved/UnsolvedInterface.ts`
+- [ ] T160 [P] [US10] Define UnsolvedCipherFacts, Theory, AnalysisSubmission types
+
+### Voynich Manuscript
+- [ ] T161 [US10] Create VoynichManuscript in `src/ciphers/unsolved/VoynichManuscript.ts`
+- [ ] T162 [US10] Add known facts database (MS 408, 170K chars, 30 symbols)
+- [ ] T163 [US10] Implement getCommunityTheories() with scored theories
+- [ ] T164 [US10] Implement applyExperimentalDecryption() with coherence scoring
+
+### Zodiac Killer Ciphers
+- [ ] T165 [US10] Create ZodiacCiphers in `src/ciphers/unsolved/ZodiacCiphers.ts`
+- [ ] T166 [US10] Add Z408 (solved), Z340 (solved 2020), Z13, Z32 data
+- [ ] T167 [US10] Document solution methods for Z408 and Z340
+
+### Kryptos
+- [ ] T168 [US10] Create KryptosSculpture in `src/ciphers/unsolved/KryptosSculpture.ts`
+- [ ] T169 [US10] Add K1-K3 solutions, K4 ciphertext (97 chars)
+- [ ] T170 [US10] Add Sanborn clues (BERLIN, CLOCK, NORTHEAST)
+
+### UI Components
+- [ ] T171 [US10] Create UnsolvedCipherExplorer component
+- [ ] T172 [US10] Create KnownFactsPanel showing ciphertext stats
+- [ ] T173 [US10] Create TheoryBrowser with community scoring
+- [ ] T174 [US10] Create ExperimentalAttackPanel for cipher application
+
+**Checkpoint**: Unsolved cipher research toolkit functional
+
+---
+
+## Phase 14: Polycosm Integration (Priority: P4)
+
+**Goal**: All ciphers integrate with Polycosm Reality Engine for multi-prism analysis
+
+**Independent Test**: Analyze ciphertext, see Oracle/Poet/Historical prisms simultaneously
+
+### Implementation for Polycosm
+
+- [ ] T175 [P] Create IPolycosmoEngine interface in `src/polycosm/PolycosmoEngine.ts`
+- [ ] T176 [P] Create RealityPrism abstract class in `src/polycosm/RealityPrism.ts`
+- [ ] T177 Create ConvergenceDetector in `src/polycosm/ConvergenceDetector.ts`
+- [ ] T178 Implement findConvergence() across active prisms
+
+### Standard Prism Library
+- [ ] T179 [P] Create OraclePrism (analytical) in `src/polycosm/prisms/OraclePrism.ts`
+- [ ] T180 [P] Create PoetPrism (aesthetic) in `src/polycosm/prisms/PoetPrism.ts`
+- [ ] T181 [P] Create CelestialPrism (cosmic) in `src/polycosm/prisms/CelestialPrism.ts`
+- [ ] T182 [P] Create HistoricalPrism (temporal) in `src/polycosm/prisms/HistoricalPrism.ts`
+- [ ] T183 [P] Create ContrarianPrism (inverse) in `src/polycosm/prisms/ContrarianPrism.ts`
+
+### Multi-View Rendering
+- [ ] T184 Create MultiverseRenderer in `src/polycosm/MultiverseRenderer.ts`
+- [ ] T185 Implement multi-panel layout for simultaneous prism display
+- [ ] T186 Create ConvergenceOverlay showing where prisms agree
+- [ ] T187 Create PrismSelector component for activation/deactivation
+
+### Integration
+- [ ] T188 Connect cryptanalysis engines to Polycosm prisms
+- [ ] T189 Connect historical ciphers to HistoricalPrism
+- [ ] T190 Connect astrological ciphers to CelestialPrism
+
+**Checkpoint**: Polycosm multi-prism analysis working
+
+---
+
+## Dependencies & Execution Order (Extended)
+
+### Cipher Alchemy Dependencies
+
+- **Phase 10 (Astrological)**: Depends on Phase 9 (Polish)
+- **Phase 11 (Historical)**: Can run parallel with Phase 10
+- **Phase 12 (Cryptanalysis)**: Can run parallel with Phase 10-11
+- **Phase 13 (Unsolved)**: Depends on Phase 12 (needs analysis tools)
+- **Phase 14 (Polycosm)**: Depends on Phase 10-13 (integrates all)
+
+### Parallel Opportunities (Extended)
+
+- T094, T095 in Phase 10 (interfaces)
+- T103, T108, T109 in Phase 10 (different cipher files)
+- T114, T117, T119, T121, T124, T126, T128, T131 in Phase 11 (different era files)
+- T137, T138 in Phase 12 (interfaces)
+- T159, T160 in Phase 13 (interfaces)
+- T175, T176, T179-T183 in Phase 14 (different files)
+
+---
+
 ## Notes
 
 - [P] tasks = different files, no dependencies
 - [Story] label maps task to user story for traceability
 - Historical accuracy required for Enigma rotor wirings
+- Historical accuracy required for Agrippa planetary tables
+- Unsolved cipher data must cite academic sources
+- Polycosm prisms should produce actionable recommendations
 - Commit after each task or logical group
