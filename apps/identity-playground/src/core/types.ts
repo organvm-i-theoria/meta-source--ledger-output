@@ -1,40 +1,32 @@
-export interface PersonalIdentity {
-  id: string;
-  name: string;
-  birthdate: string; // ISO 8601 YYYY-MM-DD
-  meaningfulWords: string[];
-  created: Date;
-  updated: Date;
-}
+/**
+ * Re-export shared types from @meta-source/core
+ * and define app-specific extensions
+ */
 
-export type NumerologySystem = 'pythagorean' | 'chaldean' | 'gematria';
+// Re-export shared types
+export type {
+  NumerologySystem,
+  NumerologyProfile,
+  PersonalIdentity,
+} from '@meta-source/core';
 
-export interface NumerologyProfile {
-  system: NumerologySystem;
-  destiny: number;      // Derived from full name
-  lifePath: number;     // Derived from birthdate
-  soulUrge: number;     // Derived from vowels
-  personality: number;  // Derived from consonants
-  expression: number;   // Synonymous with Destiny in some systems, keeping for completeness
-  rawSum: number;       // Unreduced sum
-  isMasterNumber: boolean; // 11, 22, 33
-}
-
+// App-specific visual config (extends shared with runtime fields)
 export interface VisualConfig {
   mode: '2d' | '3d';
   width: number;
   height: number;
   pointCount: number;
-  colorPrimary: string; // Hex
+  colorPrimary: string; // Hex color
   animationSpeed: number; // 0.1 to 2.0
   seed: number;
 }
 
+// App-specific generated output
 export interface GeneratedOutput {
-    id: string;
-    identityId: string;
-    timestamp: Date;
-    config: VisualConfig;
-    profile: NumerologyProfile;
-    imageData: string; // Base64 or Blob URL
+  id: string;
+  identityId: string;
+  timestamp: number;
+  config: VisualConfig;
+  profile: import('@meta-source/core').NumerologyProfile;
+  imageData: string; // Base64 or Blob URL
 }

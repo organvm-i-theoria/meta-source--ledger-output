@@ -51,7 +51,6 @@ export const PythagoreanCalculator = {
         // Standard Pythagorean: Reduce each component then sum.
         // 1990-04-15 -> 1990 (1+9+9+0=19->1+9=10->1), 04 (4), 15 (1+5=6). 1+4+6=11.
         
-        const d = new Date(birthdate);
         // Naive parsing for MVP
         const dateStr = birthdate.replace(/-/g, ''); // 19900415
         let rawLifePath = 0;

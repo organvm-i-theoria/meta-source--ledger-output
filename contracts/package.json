@@ -1,0 +1,10 @@
+{
+  "name": "@meta-source/contracts",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Phase 5: Perpetual Ledger smart contracts (placeholder)",
+  "scripts": {
+    "build": "echo 'Contracts build placeholder'",
+    "test": "echo 'Contracts test placeholder'"
+  }
+}

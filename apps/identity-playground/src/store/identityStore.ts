@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { PersonalIdentity, NumerologyProfile, NumerologySystem } from '../core/types';
 import { NumerologyEngine } from '../numerology/NumerologyEngine';
+import { useAppStore } from './appStore';
 
 interface IdentityState {
   identity: PersonalIdentity | null;
@@ -14,16 +15,17 @@ export const useIdentityStore = create<IdentityState>((set, get) => ({
   identity: null,
   profile: null,
   setIdentity: (identity) => {
-      set({ identity });
-      // Auto-calculate on identity set
-      get().calculateProfile('pythagorean');
+    set({ identity });
+    // Auto-calculate using current system from appStore
+    const currentSystem = useAppStore.getState().currentSystem;
+    get().calculateProfile(currentSystem);
   },
   calculateProfile: (system) => {
-      const { identity } = get();
-      if (!identity) return;
-      
-      const profile = NumerologyEngine.calculate(identity.name, identity.birthdate, system);
-      set({ profile });
+    const { identity } = get();
+    if (!identity) return;
+
+    const profile = NumerologyEngine.calculate(identity.name ?? '', identity.birthdate ?? '', system);
+    set({ profile });
   },
   clear: () => set({ identity: null, profile: null }),
 }));

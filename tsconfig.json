@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
+  },
+  "references": [
+    { "path": "./packages/core" },
+    { "path": "./packages/utils" },
+    { "path": "./apps/identity-playground" },
+    { "path": "./apps/cipher-rendering" }
+  ],
+  "files": [],
+  "exclude": ["node_modules", "dist", ".turbo"]
+}

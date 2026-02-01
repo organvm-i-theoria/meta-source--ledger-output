@@ -8,7 +8,7 @@ The Meta-Source Ledger is an autonomous, perpetual generative system. The organi
 
 ## Repository Status
 
-**Specification: ~95% complete | Implementation: ~15% scaffolded**
+**Specification: ~95% complete | Implementation: ~35% functional**
 
 See `docs/MASTER_PLAN_AND_STATUS.md` for effort estimates and operational cost analysis.
 
@@ -16,8 +16,9 @@ See `docs/MASTER_PLAN_AND_STATUS.md` for effort estimates and operational cost a
 
 ```
 apps/                          # Implementation (React/TypeScript)
-├── identity-playground/       # Phase 1 app - numerology, identity generation
-└── cipher-rendering/          # Phase 2 app - cipher visualization engine
+├── identity-playground/       # Phase 1 app - numerology, identity generation (port 5174)
+├── cipher-rendering/          # Phase 2 app - cipher visualization engine (port 5175)
+└── mythology-playground/      # Phase 3 app - 4444jPP governance system (port 5176)
 
 specs/phase-{1-5}-*/           # SDD workflow (spec.md → plan.md → tasks.md)
 extensions/phase-{1-5}-*/      # Detailed technical specifications
@@ -43,11 +44,17 @@ research-prompts/              # Research methodology suite
 ### Apps (Vite + React)
 
 ```bash
-# Identity Playground
-cd apps/identity-playground && npm install && npm run dev
+# Install all dependencies (from root)
+pnpm install
 
-# Cipher Rendering
-cd apps/cipher-rendering && npm install && npm run dev
+# Identity Playground (port 5174)
+cd apps/identity-playground && pnpm run dev
+
+# Cipher Rendering (port 5175)
+cd apps/cipher-rendering && pnpm run dev
+
+# Mythology Playground (port 5176)
+cd apps/mythology-playground && pnpm run dev
 ```
 
 ### Navigation

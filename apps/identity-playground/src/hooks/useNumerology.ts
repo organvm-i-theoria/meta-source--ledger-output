@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { useIdentityStore } from '../store/identityStore';
 import { NumerologyEngine } from '../numerology/NumerologyEngine';
-import { NumerologySystem } from '../core/types';
+import type { NumerologySystem as _NumerologySystem } from '../core/types';
 
 export const useNumerology = () => {
-    const { identity, profile, setIdentity, calculateProfile: storeCalculate } = useIdentityStore();
+    const { identity, profile, setIdentity, calculateProfile: _storeCalculate } = useIdentityStore();
     
     const updateIdentity = useCallback((name: string, birthdate: string) => {
         // Update identity in store
@@ -13,13 +13,12 @@ export const useNumerology = () => {
             name,
             birthdate,
             meaningfulWords: [],
-            created: new Date(),
-            updated: new Date()
+            createdAt: Date.now()
         });
         
         // Trigger calculation (which updates profile in store)
         // Note: In real app, we might want to separate these, but for MVP strict binding is fine
-        const result = NumerologyEngine.calculate(name, birthdate, 'pythagorean');
+        NumerologyEngine.calculate(name, birthdate, 'pythagorean');
         
         // We manually update the store with the result since storeCalculate was mocked in previous step
         // We should fix store logic or just use useIdentityStore.setState() if exposed, 
