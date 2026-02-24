@@ -43,3 +43,21 @@ Since this is a specification repository, there are no build or run commands.
 *   **Commit Messages:** Imperative mood, sentence case (e.g., "Add identity ethics framework").
 *   **File Naming:** Kebab-case for new files in `extensions/` and `specs/`. Preserve existing naming in `docs/`.
 *   **Testing:** Manual validation of internal links and consistency. No automated test suite.
+
+<!-- ORGANVM:AUTO:START -->
+## System Context (auto-generated — do not edit)
+
+**Organ:** ORGAN-I (Theory) | **Tier:** standard | **Status:** LOCAL
+**Org:** `unknown` | **Repo:** `meta-source--ledger-output`
+
+### Edges
+- **Produces** → `unknown`: unknown
+
+### Siblings in Theory
+`recursive-engine--generative-entity`, `organon-noumenon--ontogenetic-morphe`, `auto-revision-epistemic-engine`, `narratological-algorithmic-lenses`, `call-function--ontological`, `sema-metra--alchemica-mundi`, `system-governance-framework`, `cognitive-archaelogy-tribunal`, `a-recursive-root`, `radix-recursiva-solve-coagula-redi`, `.github`, `nexus--babel-alexandria-`, `reverse-engine-recursive-run`, `4-ivi374-F0Rivi4`, `cog-init-1-0-` ... and 4 more
+
+### Governance
+- Foundational theory layer. No upstream dependencies.
+
+*Last synced: 2026-02-24T12:41:28Z*
+<!-- ORGANVM:AUTO:END -->
