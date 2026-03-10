@@ -1,0 +1,8 @@
+schema_version: '1.0'
+repo: meta-source--ledger-output
+organ: I
+display_name: Cross-domain creative-technical framework exploring identity systems,
+  cipher visualization, mythology, and generative platforms
+delivery:
+- platform: web_app
+  status: not_started
